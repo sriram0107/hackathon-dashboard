@@ -4,6 +4,7 @@
   flex-direction: row;
   box-sizing: content-box;
   border-bottom: 2px solid rgb(225, 237, 248);
+  overflow-y: hidden;
 }
 
 .logo-container {
@@ -79,6 +80,7 @@
 
 .nav-item:hover {
   cursor: pointer;
+  color: royalblue;
 }
 
 .nav-item-underline {

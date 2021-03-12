@@ -1,16 +1,17 @@
 import React from "react";
 import "./Events.css";
+import { ColorScheme } from "../../config";
 
-const ColorScheme = {
-  workshop: "FFFF99",
-  activity: "9999FF",
-  tech_talk: "FF66FF",
+const Event = ({ info }) => {
+  return (
+    <div
+      style={{ backgroundColor: ColorScheme[info.event_type] }}
+      className="event"
+    >
+      {info.name}
+      {info.event_type}
+    </div>
+  );
 };
-
-const Event = (props) => {
-  return <div></div>;
-};
-
-Event.propTypes = {};
 
 export default Event;

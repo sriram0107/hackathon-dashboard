@@ -15,18 +15,9 @@ const Navbar = (props) => {
         <div className="logo"></div>
       </div>
       <div className={navOpen ? "options-container" : "sidebar"}>
-        <div className="nav-item transform-color">
-          Search
-          <div className="nav-item-underline transform-width"></div>
-        </div>
-        <div className="nav-item transform-color">
-          Learn More
-          <div className="nav-item-underline transform-width"></div>
-        </div>
-        <div className="nav-item transform-color">
-          FAQ
-          <div className="nav-item-underline transform-width"></div>
-        </div>
+        <div className="nav-item transform-color">Search</div>
+        <div className="nav-item transform-color">Learn More</div>
+        <div className="nav-item transform-color">FAQ</div>
         <div className="login-button">
           <div className="github-logo"></div>
           <div className="login-button-text">Login</div>
