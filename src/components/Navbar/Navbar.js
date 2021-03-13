@@ -3,11 +3,25 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import "./Navbar.css";
 
-const Navbar = (props) => {
+const Navbar = ({
+  blurContent,
+  blur,
+  login,
+  changeLogin,
+  auth,
+  changeAuth,
+}) => {
   const [navOpen, toggleNav] = useState(true);
   const toggle = () => {
     toggleNav(!navOpen);
-    props.blurContent(!props.blur);
+    blurContent(!blur);
+  };
+  const beginAuth = () => {
+    if (!login) {
+      changeAuth(true);
+    } else {
+      changeLogin(false);
+    }
   };
   return (
     <div className="navbar">
@@ -20,7 +34,9 @@ const Navbar = (props) => {
         <div className="nav-item transform-color">FAQ</div>
         <div className="login-button">
           <div className="github-logo"></div>
-          <div className="login-button-text">Login</div>
+          <div className="login-button-text" onClick={() => beginAuth()}>
+            {login ? "Logout" : "Login"}
+          </div>
         </div>
       </div>
       <div className="hamburger" onClick={() => toggle()}>

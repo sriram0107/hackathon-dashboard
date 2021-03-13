@@ -31,8 +31,7 @@ const template = [
   { name: "micros", event_type: "workshop" },
 ];
 
-const Home = () => {
-  const [login, changeLogin] = useState(false);
+const Home = (props) => {
   const event_map = () => {
     template.map((event) => {
       return <Event info={event} />;
@@ -46,8 +45,8 @@ const Home = () => {
           <Event info={event} />
         ))}
       </div>
-      {!login ? (
-        <p className="login_prompt">
+      {!props.login ? (
+        <p className={!props.login ? "login_prompt" : "no_prompt"}>
           <>
             Login to see more <b>exciting events!</b>
           </>

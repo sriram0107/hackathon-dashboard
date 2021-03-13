@@ -43,6 +43,9 @@
   align-items: center;
   justify-content: center;
 }
+.no_prompt {
+  display: none;
+}
 
 .events_grid {
   margin: 100px;
