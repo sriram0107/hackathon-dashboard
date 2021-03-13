@@ -10,7 +10,16 @@ const Main = () => {
   const [auth, changeAuth] = useState(false);
   return (
     <div>
-      {auth ? <Login changeAuth={changeAuth} changeLogin={changeLogin} /> : ""}
+      {auth ? (
+        <Login
+          changeAuth={changeAuth}
+          changeLogin={changeLogin}
+          blur={blur}
+          undoBlur={undoBlur}
+        />
+      ) : (
+        ""
+      )}
       <Navbar
         blurContent={undoBlur}
         blur={blur}

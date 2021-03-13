@@ -1,16 +1,97 @@
 .login {
+  margin: auto;
   position: absolute;
-  width: 80vw;
-  height: 80vh;
-  left: 50%;
-  top: 50%;
-  right: 50%;
-  bottom: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background: linear-gradient(270deg, #020024, #090979, #00d4ff);
+  background-size: 600% 600%;
+
+  -webkit-animation: bluetheme 19s ease infinite;
+  -moz-animation: bluetheme 19s ease infinite;
+  animation: bluetheme 19s ease infinite;
 }
-.login p {
+
+@-webkit-keyframes bluetheme {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes bluetheme {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bluetheme {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login h1 {
   color: rgb(194, 55, 55);
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+}
+
+.close_icon {
+  width: 100%;
+  height: 10vh;
+}
+
+.auth_area {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth_area h1 {
+  color: azure;
+}
+
+.auth_area input {
+  font-family: sans-serif;
+  width: 60%;
+  height: 4vh;
+  margin: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: large;
+  border-style: none;
+}
+.auth_area button {
+  background-color: rgb(121, 135, 218);
+  height: 3vh;
+  width: 50px;
 }
