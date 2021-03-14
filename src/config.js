@@ -10,15 +10,14 @@ const GET_API_ENDPOINT = (id) => {
 };
 
 // if loggedIn is true, private events are returned
-export async function getEvent(loggedIn) {
+export async function getEvent() {
+  // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  // return await Promise.all(
+  //   data.forEach(async (i) => await (await fetch(GET_API_ENDPOINT(i))).json())
+  // );
   var data = [];
-  for (var i = 1; i <= EVENTS; ++i) {
-    console.log(i);
-    fetch(GET_API_ENDPOINT(i))
-      .then((res) => res.json)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  }
+  // data.push(await (await fetch(GET_API_ENDPOINT(1))).json());
+  // console.log(data[0]);
   return data;
 }
 

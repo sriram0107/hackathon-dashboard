@@ -33,7 +33,6 @@ const Navbar = ({
         <div className="nav-item transform-color">Learn More</div>
         <div className="nav-item transform-color">FAQ</div>
         <div className="login-button">
-          <div className="github-logo"></div>
           <div className="login-button-text" onClick={() => beginAuth()}>
             {login ? "Logout" : "Login"}
           </div>

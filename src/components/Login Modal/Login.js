@@ -5,8 +5,8 @@ import "./login.css";
 import { GUEST_USERNAME, GUEST_PASSWORD } from "../../config";
 
 const Login = ({ changeAuth, changeLogin, blur, undoBlur }) => {
-  const [username, changeUsername] = useState("guest");
-  const [password, changePassword] = useState("abcd");
+  const [username, changeUsername] = useState(GUEST_USERNAME);
+  const [password, changePassword] = useState(GUEST_PASSWORD);
   const [invalid, changeInvalid] = useState(false);
   const authenticate = () => {
     if (username === GUEST_USERNAME && password === GUEST_PASSWORD) {
@@ -41,7 +41,7 @@ const Login = ({ changeAuth, changeLogin, blur, undoBlur }) => {
           onChange={(e) => changePassword(e.target.value)}
         ></input>
         <ArrowForwardIcon
-          style={{ fontSize: "70px", cursor: "pointer", color: "white" }}
+          style={{ fontSize: "60px", cursor: "pointer", color: "white" }}
           onClick={() => authenticate()}
         />
       </div>
