@@ -5,8 +5,11 @@ import Login from "./Login Modal/Login";
 import Footer from "./Footer/Footer";
 
 const Main = () => {
+  // This state handled page blurring when the navbar opens in responsive mode
   const [blur, undoBlur] = useState(true);
+  // This state determines whether the user has logged in or not
   const [login, changeLogin] = useState(false);
+  // This state is set true when the authentication process is ongoing - helps keep track of login modal
   const [auth, changeAuth] = useState(false);
   return (
     <div>

@@ -19,35 +19,37 @@ const Event_Page = ({ info, clicked, changeClicked, login }) => {
       </div>
       <div className="info_area">
         <h1>{info.name}</h1>
-        <text>
-          {`${new Date(info.start_time)}` - `${new Date(info.end_time)}`}
-        </text>
+        {/* <text>
+          {`${new Date(info.start_time)} - ${new Date(info.end_time)}`}
+        </text> */}
       </div>
       <div className="desc">
         <p>{info.description}</p>
       </div>
-      <div className="speakers">
-        <h4>Speakers</h4>
-        {info.speakers.map((speaker) => {
-          return (
-            <div className="speaker">
-              <img className="template" src={PictureTemplate} />
-              <p>{speaker.name}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="links">
-        <a target="_blank" href={info.public_url}>
-          <YouTubeIcon style={{ color: "red", fontSize: "70px" }} />
-        </a>
-        {login ? (
-          <a target="_blank" href={info.private_url}>
-            <VideocamIcon style={{ color: "royalblue", fontSize: "70px" }} />
+      <div className="event_footer">
+        <div className="speakers">
+          <h4>Speakers</h4>
+          {info.speakers.map((speaker) => {
+            return (
+              <div className="speaker">
+                <img className="template" src={PictureTemplate} />
+                <p>{speaker.name}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="links">
+          <a target="_blank" href={info.public_url}>
+            <YouTubeIcon style={{ color: "red", fontSize: "70px" }} />
           </a>
-        ) : (
-          <p></p>
-        )}
+          {login ? (
+            <a target="_blank" href={info.private_url}>
+              <VideocamIcon style={{ color: "black", fontSize: "70px" }} />
+            </a>
+          ) : (
+            <p></p>
+          )}
+        </div>
       </div>
     </div>
   );

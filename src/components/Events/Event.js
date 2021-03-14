@@ -12,9 +12,6 @@ const Event = ({ info, changeClicked, changemodalInfo }) => {
         changemodalInfo(info);
       }}
     >
-      <text>
-        {`${new Date(info.start_time)}` - `${new Date(info.end_time)}`}
-      </text>
       <p>{info.name}</p>
     </div>
   );
