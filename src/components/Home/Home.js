@@ -28,6 +28,9 @@ const Home = (props) => {
         temp.push(data);
       }
     }
+    temp.sort((d1, d2) => {
+      return d1.data.event.start_date - d2.data.event.start_date;
+    });
     changeEvents(temp);
     changeLoading(false);
   }, [props.login]);
