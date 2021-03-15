@@ -17,16 +17,15 @@ const EventPage = ({ info, clicked, changeClicked, login }) => {
             color: "black",
             cursor: "pointer",
             fontSize: "30px",
-            margin: "10px",
           }}
           onClick={() => {
             changeClicked(false);
           }}
-        />
-        <h3>{Events[info.event_type]}</h3>
+        />{" "}
+        <h2>{Events[info.event_type]}</h2>
       </div>
       <div className="info_area">
-        <h1>{info.name}</h1>
+        <h2>{info.name}</h2>
         <text>
           <Moment date={new Date(info.start_time)} format="DD/MM/YY hh:mm" /> -{" "}
           <Moment date={new Date(info.end_time)} format="hh:mm" />
