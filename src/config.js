@@ -15,3 +15,9 @@ export const ColorScheme = {
   activity: "#9999FF",
   tech_talk: "#FF66FF",
 };
+
+export const Events = {
+  workshop: "Workshop",
+  activity: "Activity",
+  tech_talk: "Tech Talk",
+};

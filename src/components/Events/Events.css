@@ -27,30 +27,57 @@
   bottom: 0;
   z-index: 10;
   width: 40vw;
-  height: 60vh;
+  height: 70vh;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  background: #005aa7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #fffde4,
-    #005aa7
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #fffde4,
-    #005aa7
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  justify-content: space-between;
+  background: #edf0ff;  /* fallback for old browsers */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
-.close_icon {
+.close_icon_events {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  height: 25%;
+  background: linear-gradient(210deg, #000000, #524f4f, #767575);
+    background-size: 600% 600%;
+
+    -webkit-animation: modal-top 17s ease infinite;
+    -moz-animation: modal-top 17s ease infinite;
+    animation: modal-top 17s ease infinite;
+}
+@-webkit-keyframes modal-top {
+    0%{background-position:61% 0%}
+    50%{background-position:40% 100%}
+    100%{background-position:61% 0%}
+}
+@-moz-keyframes modal-top {
+    0%{background-position:61% 0%}
+    50%{background-position:40% 100%}
+    100%{background-position:61% 0%}
+}
+@keyframes modal-top {
+    0%{background-position:61% 0%}
+    50%{background-position:40% 100%}
+    100%{background-position:61% 0%}
+}
+.close_icon_events h3 {
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 34%;
+  align-items: center;
+  text-align:center;
+  font-size: xx-large;
+  color:rgb(255, 255, 255);
+
 }
 .info_area {
   width: 100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   display: flex;
   flex-direction: column;
@@ -60,14 +87,16 @@
 }
 
 .desc {
-  padding: 10px;
+  padding: 26px;
   width: 100%;
-  height: 20vh;
-  font-size: 17px;
+  height: 30%;
+  font-size: 18px;
   text-align: center;
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
+
+  overflow-y: visible;
 }
 
 .links {
@@ -79,9 +108,8 @@
   justify-content: center;
 }
 .speakers {
-  margin-top: 20px;
   width: 100%;
-  font-size: x-large;
+  font-size: large;
   text-align: center;
   height: 100%;
   display: flex;
@@ -90,7 +118,7 @@
   align-items: center;
 }
 .event_footer {
-
+  height:auto;
   width:100%;
   display: flex;
   flex-direction: row;
@@ -110,13 +138,16 @@
   height: 25px;
   margin: 15px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1100px) {
   .event_info_modal {
     width: 90vw;
     height: 80vh;
   }
   .desc {
     font-size: 15px;
+  }
+  .close_icon_events h3 {
+    padding-left: 30%;
   }
 }
 

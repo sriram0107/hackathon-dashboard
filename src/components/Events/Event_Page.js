@@ -4,13 +4,14 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PictureTemplate from "../../assets/pictemp.png";
 import Moment from "react-moment";
+import { Events } from "../../config";
 import "moment-timezone";
 import "./Events.css";
 
 const EventPage = ({ info, clicked, changeClicked, login }) => {
   return (
     <div className="event_info_modal">
-      <div className="close_icon">
+      <div className="close_icon_events">
         <CloseIcon
           style={{
             color: "black",
@@ -22,6 +23,7 @@ const EventPage = ({ info, clicked, changeClicked, login }) => {
             changeClicked(false);
           }}
         />
+        <h3>{Events[info.event_type]}</h3>
       </div>
       <div className="info_area">
         <h1>{info.name}</h1>
@@ -36,7 +38,7 @@ const EventPage = ({ info, clicked, changeClicked, login }) => {
       <div className="event_footer">
         <div className="speakers">
           <h4>Speakers</h4>
-          {info.speakers.length === 0 ? "None" : <></>}
+          {info.speakers.length === 0 ? "No Speakers" : <></>}
           {info.speakers.map((speaker) => {
             return (
               <div className="speaker">
