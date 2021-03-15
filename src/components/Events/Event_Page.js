@@ -13,7 +13,12 @@ const Event_Page = ({ info, clicked, changeClicked, login }) => {
     <div className="event_info_modal">
       <div className="close_icon">
         <CloseIcon
-          style={{ color: "black", cursor: "pointer" }}
+          style={{
+            color: "black",
+            cursor: "pointer",
+            fontSize: "30px",
+            margin: "10px",
+          }}
           onClick={() => {
             changeClicked(false);
           }}

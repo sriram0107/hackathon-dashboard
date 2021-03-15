@@ -10,16 +10,19 @@ const Navbar = ({
   changeLogin,
   auth,
   changeAuth,
+  changeEvents,
 }) => {
   const [navOpen, toggleNav] = useState(true);
   const toggle = () => {
     toggleNav(!navOpen);
     blurContent(!blur);
   };
-  const beginAuth = () => {
+  const log = () => {
     if (!login) {
       changeAuth(true);
     } else {
+      // Reset events to empty after user has logged out
+      changeEvents([]);
       changeLogin(false);
     }
   };
@@ -33,13 +36,17 @@ const Navbar = ({
         <div className="nav-item transform-color">Learn More</div>
         <div className="nav-item transform-color">FAQ</div>
         <div className="login-button">
-          <div className="login-button-text" onClick={() => beginAuth()}>
+          <div className="login-button-text" onClick={() => log()}>
             {login ? "Logout" : "Login"}
           </div>
         </div>
       </div>
       <div className="hamburger" onClick={() => toggle()}>
-        {navOpen ? <MenuIcon /> : <CloseIcon />}
+        {navOpen ? (
+          <MenuIcon style={{ color: "black" }} />
+        ) : (
+          <CloseIcon style={{ color: "black" }} />
+        )}
       </div>
     </div>
   );
