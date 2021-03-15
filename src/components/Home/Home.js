@@ -13,7 +13,7 @@ const Home = ({ login, events, changeEvents }) => {
   // True when the API is fetching results false otherwise
   const [loading, changeLoading] = useState(true);
   // stores the search results
-  const [search, changeSearch] = useState([]);
+  //const [search, changeSearch] = useState([]);
 
   // First change occurs when page is rendered and subsequent changes occur when user logs in and out
   useEffect(() => {
