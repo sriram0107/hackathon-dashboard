@@ -66,6 +66,15 @@
   justify-content: center;
 }
 
+.sidebar {
+  margin-left: 10%;
+  width: 60%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-item {
   float: right;
   line-height: 40px;

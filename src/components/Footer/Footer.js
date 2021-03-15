@@ -6,7 +6,7 @@ import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import "./Footer.css";
 
 const styles = {
-  "font-size": "40px",
+  "font-size": "35px",
   margin: "30px",
 };
 

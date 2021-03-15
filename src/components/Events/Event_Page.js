@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PictureTemplate from "../../assets/pictemp.png";
 import Moment from "react-moment";
 import "moment-timezone";
-import { Link } from "react-router-dom";
 import "./Events.css";
 
-const Event_Page = ({ info, clicked, changeClicked, login }) => {
+const EventPage = ({ info, clicked, changeClicked, login }) => {
   return (
     <div className="event_info_modal">
       <div className="close_icon">
@@ -41,18 +40,18 @@ const Event_Page = ({ info, clicked, changeClicked, login }) => {
           {info.speakers.map((speaker) => {
             return (
               <div className="speaker">
-                <img className="template" src={PictureTemplate} />
+                <img className="template" src={PictureTemplate} alt="pic" />
                 <p>{speaker.name}</p>
               </div>
             );
           })}
         </div>
         <div className="links">
-          <a target="_blank" href={info.public_url}>
+          <a target="_blank" rel="noreferrer" href={info.public_url}>
             <YouTubeIcon style={{ color: "red", fontSize: "70px" }} />
           </a>
           {login ? (
-            <a target="_blank" href={info.private_url}>
+            <a target="_blank" rel="noreferrer" href={info.private_url}>
               <VideocamIcon style={{ color: "black", fontSize: "70px" }} />
             </a>
           ) : (
@@ -64,4 +63,4 @@ const Event_Page = ({ info, clicked, changeClicked, login }) => {
   );
 };
 
-export default Event_Page;
+export default EventPage;

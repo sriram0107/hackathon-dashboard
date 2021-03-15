@@ -78,8 +78,11 @@
 
 @media screen and (max-width: 850px) {
   .login_prompt {
-    font-size: 30px;
+    font-size: 20px;
   }
+  .login_prompt b {
+  margin-left:6px;
+}
   .heading {
     font-size: 50px;
   }

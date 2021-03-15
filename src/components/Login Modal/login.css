@@ -100,4 +100,7 @@
   .auth_area {
     font-size: 10px;
   }
+  .login {
+    width:80vw;
+  }
 }

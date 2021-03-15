@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Event from "../Events/Event";
-import Event_Page from "../Events/Event_Page";
-import { GET_API_ENDPOINT, EVENTS, PRIVATE, PUBLIC } from "../../config";
+import EventPage from "../Events/Event_Page";
+import { GET_API_ENDPOINT, EVENTS, PUBLIC } from "../../config";
 import "./Home.css";
 
 const Home = ({ login, events, changeEvents }) => {
@@ -15,31 +15,33 @@ const Home = ({ login, events, changeEvents }) => {
   // stores the search results
   const [search, changeSearch] = useState([]);
 
-  // Change occurs when user logs in and out
-  useEffect(async () => {
-    // Trigger loading icon and making calls to the API
-    changeLoading(true);
-    var temp = [];
-    for (let pos = 1; pos <= EVENTS; ++pos) {
-      const res = await fetch(GET_API_ENDPOINT(pos));
-      const data = await res.json();
-      console.log("data -> ", pos, data);
-      if (login || data.data.event.permission === PUBLIC) {
-        temp.push(data);
+  // First change occurs when page is rendered and subsequent changes occur when user logs in and out
+  useEffect(() => {
+    async function fetchData() {
+      // Trigger loading icon while making calls to the API
+      changeLoading(true);
+      var temp = [];
+      for (let pos = 1; pos <= EVENTS; ++pos) {
+        const res = await fetch(GET_API_ENDPOINT(pos));
+        const data = await res.json();
+        if (login || data.data.event.permission === PUBLIC) {
+          temp.push(data);
+        }
       }
+      // sort results in ascending order of starting times
+      temp.sort((d1, d2) => {
+        return d1.data.event.start_time - d2.data.event.start_time;
+      });
+      changeEvents(temp);
+      // Turn off loading icon - results are available
+      changeLoading(false);
     }
-    // sort results in ascending order of starting times
-    temp.sort((d1, d2) => {
-      return d1.data.event.start_time - d2.data.event.start_time;
-    });
-    changeEvents(temp);
-    // Turn off loading icon - results are available
-    changeLoading(false);
+    fetchData();
   }, [login]);
   return (
     <div className="home">
       {clicked ? (
-        <Event_Page
+        <EventPage
           info={modalInfo}
           clicked={clicked}
           changeClicked={changeClicked}
@@ -53,6 +55,7 @@ const Home = ({ login, events, changeEvents }) => {
         {loading ? <CircularProgress /> : <></>}
         {events.map((event) => (
           <Event
+            key={Math.floor(Math.random() * 1000) + 1}
             info={event.data.event}
             changeClicked={changeClicked}
             changemodalInfo={changemodalInfo}
