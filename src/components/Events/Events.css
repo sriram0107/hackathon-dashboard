@@ -41,27 +41,27 @@
   flex-direction: column;
   width: 100%;
   height: 25%;
-  background: linear-gradient(210deg, #000000, #524f4f, #767575);
-    background-size: 600% 600%;
+  background: linear-gradient(270deg, #000000, #3e3a3a, #525252, #707070);
+    background-size: 800% 800%;
 
-    -webkit-animation: modal-top 17s ease infinite;
-    -moz-animation: modal-top 17s ease infinite;
-    animation: modal-top 17s ease infinite;
+    -webkit-animation: modal-heading 9s ease infinite;
+    -moz-animation: modal-heading 9s ease infinite;
+    animation: modal-heading 9s ease infinite;
 }
-@-webkit-keyframes modal-top {
-    0%{background-position:61% 0%}
-    50%{background-position:40% 100%}
-    100%{background-position:61% 0%}
+@-webkit-keyframes modal-heading {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
-@-moz-keyframes modal-top {
-    0%{background-position:61% 0%}
-    50%{background-position:40% 100%}
-    100%{background-position:61% 0%}
+@-moz-keyframes modal-heading {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
-@keyframes modal-top {
-    0%{background-position:61% 0%}
-    50%{background-position:40% 100%}
-    100%{background-position:61% 0%}
+@keyframes modal-heading {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 .close_icon_events h2 {
   width:100%;
@@ -82,6 +82,11 @@
   align-items: center;
 
 }
+.info_area h2 {
+  width: 100%;
+  text-align: center;
+}
+
 
 .desc {
   padding: 26px;

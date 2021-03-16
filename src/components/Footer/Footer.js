@@ -8,6 +8,7 @@ import "./Footer.css";
 const styles = {
   fontSize: "35px",
   margin: "30px",
+  cursor: "pointer",
 };
 
 const Footer = () => {

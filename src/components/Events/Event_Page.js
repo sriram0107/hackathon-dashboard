@@ -14,7 +14,7 @@ const EventPage = ({ info, clicked, changeClicked, login }) => {
       <div className="close_icon_events">
         <CloseIcon
           style={{
-            color: "black",
+            color: "white",
             cursor: "pointer",
             fontSize: "30px",
           }}
