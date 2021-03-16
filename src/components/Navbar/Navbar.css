@@ -135,10 +135,10 @@
   }
   .sidebar {
     position: absolute;
-    left: 50%;
+    left: 30%;
     opacity: 0.98;
-    height: 100%;
-    width: 50%;
+    height: 100vh;
+    width: 60%;
     background: lightblue;
     display: flex;
     flex-direction: column;
