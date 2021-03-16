@@ -4,8 +4,7 @@ export const PUBLIC = "public";
 export const GUEST_USERNAME = "guest";
 export const GUEST_PASSWORD = "abcd";
 
-// gets the endpoint for a particular id
-// NOTE : id is guarenteed to be between 1 and EVENTS (exclusive)
+// gets the endpoint for fetching data
 export const GET_API_ENDPOINT = () => {
   return `https://api.hackthenorth.com/v3/graphql?query={ events 
   { id name event_type permission start_time end_time description

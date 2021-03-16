@@ -7,7 +7,7 @@ import { GUEST_USERNAME, GUEST_PASSWORD } from "../../config";
 const Login = ({ changeAuth, changeLogin, blur, undoBlur }) => {
   const [username, changeUsername] = useState(GUEST_USERNAME);
   const [password, changePassword] = useState(GUEST_PASSWORD);
-  // set to true when password / username doesn not match
+  // set to true when password / username does not match
   const [invalid, changeInvalid] = useState(false);
   const authenticate = () => {
     if (username === GUEST_USERNAME && password === GUEST_PASSWORD) {
