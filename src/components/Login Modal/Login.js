@@ -7,6 +7,7 @@ import { GUEST_USERNAME, GUEST_PASSWORD } from "../../config";
 const Login = ({ changeAuth, changeLogin, blur, undoBlur }) => {
   const [username, changeUsername] = useState(GUEST_USERNAME);
   const [password, changePassword] = useState(GUEST_PASSWORD);
+  // set to true when password / username doesn not match
   const [invalid, changeInvalid] = useState(false);
   const authenticate = () => {
     if (username === GUEST_USERNAME && password === GUEST_PASSWORD) {
@@ -45,6 +46,7 @@ const Login = ({ changeAuth, changeLogin, blur, undoBlur }) => {
           onClick={() => authenticate()}
         />
       </div>
+      {/* Displays only if the wrong credentials are entered */}
       <h1>{invalid ? "Please try again" : ""}</h1>
     </div>
   );

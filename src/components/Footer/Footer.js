@@ -5,6 +5,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import "./Footer.css";
 
+// icon styles
 const styles = {
   fontSize: "35px",
   margin: "30px",

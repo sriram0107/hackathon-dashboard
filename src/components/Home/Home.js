@@ -12,8 +12,6 @@ const Home = ({ login, events, changeEvents }) => {
   const [modalInfo, changemodalInfo] = useState({});
   // True when the API is fetching results false otherwise
   const [loading, changeLoading] = useState(true);
-  // stores the search results
-  //const [search, changeSearch] = useState([]);
 
   // First change occurs when page is rendered and subsequent changes occur when user logs in and out
   useEffect(() => {
@@ -40,6 +38,7 @@ const Home = ({ login, events, changeEvents }) => {
   }, [login]);
   return (
     <div className="home">
+      {/* Conditonal rendering of Event info modal when user clicks on an event */}
       {clicked ? (
         <EventPage
           info={modalInfo}
@@ -52,9 +51,12 @@ const Home = ({ login, events, changeEvents }) => {
       )}
       <p className="heading">Events</p>
       <div className="events_grid">
+        {/* CircluarProgress appears when the API is making calls */}
         {loading ? <CircularProgress /> : <></>}
+        {/* Appears as soon as API gets the data */}
         {events.map((event) => (
           <Event
+            //To generate a random number as key
             key={Math.floor(Math.random() * 1000) + 1}
             info={event.data.event}
             changeClicked={changeClicked}
@@ -62,6 +64,7 @@ const Home = ({ login, events, changeEvents }) => {
           />
         ))}
       </div>
+      {/* prompt displayed only if user has not logged in */}
       {!login ? (
         <p className={!login ? "login_prompt" : "no_prompt"}>
           <>

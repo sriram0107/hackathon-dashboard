@@ -8,15 +8,19 @@ const Navbar = ({
   blur,
   login,
   changeLogin,
-  auth,
   changeAuth,
   changeEvents,
 }) => {
+  // local state to toggle the sidebar in responsive mode
   const [navOpen, toggleNav] = useState(true);
+
+  // to toggle navbar
   const toggle = () => {
     toggleNav(!navOpen);
     blurContent(!blur);
   };
+
+  // to login or logout user
   const log = () => {
     if (!login) {
       changeAuth(true);
@@ -41,6 +45,7 @@ const Navbar = ({
           </div>
         </div>
       </div>
+      {/* The following code is to toggle the sidebar */}
       <div className="hamburger" onClick={() => toggle()}>
         {navOpen ? (
           <MenuIcon style={{ color: "black" }} />

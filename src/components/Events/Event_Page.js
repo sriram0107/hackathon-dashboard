@@ -8,7 +8,7 @@ import { Events } from "../../config";
 import "moment-timezone";
 import "./Events.css";
 
-const EventPage = ({ info, clicked, changeClicked, login }) => {
+const EventPage = ({ info, changeClicked, login }) => {
   return (
     <div className="event_info_modal">
       <div className="close_icon_events">
@@ -22,6 +22,7 @@ const EventPage = ({ info, clicked, changeClicked, login }) => {
             changeClicked(false);
           }}
         />{" "}
+        {/* Check config.js for details */}
         <h2>{Events[info.event_type]}</h2>
       </div>
       <div className="info_area">
