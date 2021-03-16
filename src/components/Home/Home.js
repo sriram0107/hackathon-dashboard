@@ -19,16 +19,17 @@ const Home = ({ login, events, changeEvents }) => {
       // Trigger loading icon while making calls to the API
       changeLoading(true);
       var temp = [];
-      for (let pos = 1; pos <= EVENTS; ++pos) {
-        const res = await fetch(GET_API_ENDPOINT(pos));
-        const data = await res.json();
-        if (login || data.data.event.permission === PUBLIC) {
-          temp.push(data);
+      const res = await fetch(GET_API_ENDPOINT());
+      const data = await res.json();
+      console.log(data.data.events[1]);
+      for (let pos = 0; pos < EVENTS; ++pos) {
+        if (login || data.data.events[pos].permission === PUBLIC) {
+          temp.push(data.data.events[pos]);
         }
       }
       // sort results in ascending order of starting times
       temp.sort((d1, d2) => {
-        return d1.data.event.start_time - d2.data.event.start_time;
+        return d1.start_time - d2.start_time;
       });
       changeEvents(temp);
       // Turn off loading icon - results are available
@@ -58,7 +59,7 @@ const Home = ({ login, events, changeEvents }) => {
           <Event
             //To generate a random number as key
             key={Math.floor(Math.random() * 1000) + 1}
-            info={event.data.event}
+            info={event}
             changeClicked={changeClicked}
             changemodalInfo={changemodalInfo}
           />

@@ -6,9 +6,10 @@ export const GUEST_PASSWORD = "abcd";
 
 // gets the endpoint for a particular id
 // NOTE : id is guarenteed to be between 1 and EVENTS (exclusive)
-export const GET_API_ENDPOINT = (id) => {
-  return `https://api.hackthenorth.com/v3/graphql?query={ event(id: ${id}) { id name event_type permission 
-            start_time end_time description speakers { name profile_pic } public_url private_url related_events } }`;
+export const GET_API_ENDPOINT = () => {
+  return `https://api.hackthenorth.com/v3/graphql?query={ events 
+  { id name event_type permission start_time end_time description
+    speakers { name profile_pic } public_url private_url related_events } }`;
 };
 
 // ADDITIONAL CONTROLS
